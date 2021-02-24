@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//App Controller
 Route::get('/', 'AppController@index')->name('home');
 Route::get('/videogames', 'AppController@products')->name('videogames');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
 
+//Main Controller
+Route::resource('posts', 'MainController');
 
