@@ -15,8 +15,8 @@ Insert a new videogame
     <label for="body">Insert description</label>
     <textarea id="body" name="body" cols="30" rows="10"></textarea>
     <label for="cover">Insert title</label>
-    <input type="text" id="cover" placeholder="cover">
-    
+    <input type="text" id="cover" name="cover" placeholder="cover">
+    {{-- Submit --}}
     <input type="submit" value="Insert">
 
 </form>

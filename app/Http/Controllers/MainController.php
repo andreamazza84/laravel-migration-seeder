@@ -68,7 +68,7 @@ class MainController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('posts.edit', compact('product'));
     }
 
     /**
@@ -80,7 +80,11 @@ class MainController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        //dd($request);
+        $data = $request->all();
+        $product->update($data);
+
+        return redirect()->route('posts.show', $product);
     }
 
     /**

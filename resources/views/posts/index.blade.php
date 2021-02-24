@@ -29,6 +29,8 @@ All videogames
                 <td>{{ $product->updated_at }}</td>
                 <td>
                     <a href="{{ route('posts.show', $product->id) }}">View</a>
+                    <a href="{{ route('posts.edit', $product->id) }}">Edit</a>
+
                 </td>
             </tr>
         @endforeach
