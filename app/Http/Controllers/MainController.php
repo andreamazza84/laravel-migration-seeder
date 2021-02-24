@@ -38,6 +38,13 @@ class MainController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        //Validation
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'cover' => 'required'
+        ]);
+        Product::create($validatedData);
         $product = new Product;
         $product->title = request('title');
         $product->body = request('body');
@@ -56,7 +63,10 @@ class MainController extends Controller
      */
     public function show(Product $product)
     {
-        //dd($product);
+        //$prodotto = Product::find($product);
+
+        //$products = Product::all();
+        //dd($products);
         return view('posts.show', compact('product'));
     }
 
@@ -95,6 +105,7 @@ class MainController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('posts.index');
     }
 }

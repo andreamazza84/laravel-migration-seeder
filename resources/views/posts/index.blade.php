@@ -6,9 +6,9 @@ All videogames
 
 @section('content')
 <h1>All videogames</h1>
-<a href="{{ route('posts.create') }}"> Create a new product</a>
+<a class="btn" href="{{ route('posts.create') }}"> Create a new product</a>
 
-<table>
+<table class="index">
     <thead>
         <th>ID</th>
         <th>Cover</th>
@@ -28,9 +28,13 @@ All videogames
                 <td>{{ $product->created_at }}</td>
                 <td>{{ $product->updated_at }}</td>
                 <td>
-                    <a href="{{ route('posts.show', $product->id) }}">View</a>
-                    <a href="{{ route('posts.edit', $product->id) }}">Edit</a>
-
+                    <a class="btn" href="{{route('posts.show', [$product->id])}}">View</a>
+                    <a class="btn" href="{{route('posts.edit', [$product->id])}}">Edit</a>
+                    <form action="{{ route('posts.destroy', $product->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input class="btn" type="submit" value="Delete">
+                    </form>
                 </td>
             </tr>
         @endforeach

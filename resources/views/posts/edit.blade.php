@@ -7,7 +7,7 @@ Edit videogame
 @section('content')
 <h1>Modify videogame information</h1>
 
-<form action="{{ route('posts.update', $product->id) }}", method="post">
+<form class="edit-create" action="{{ route('posts.update', $product->id) }}", method="post">
     @csrf
     @method('PUT')
     <label for="title">Change title</label>
