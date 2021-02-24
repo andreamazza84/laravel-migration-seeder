@@ -27,21 +27,21 @@ Insert a new videogame
     @enderror
 
     <label for="title">Insert title</label>
-    <input type="text" id="title" placeholder="title" name="title">
+    <input type="text" id="title" placeholder="title" name="title" value="{{ old('title') }}">
 
     @error('body')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
     <label for="body">Insert description</label>
-    <textarea id="body" name="body" cols="30" rows="10"></textarea>
+    <textarea id="body" name="body" cols="30" rows="10" >{{ old('body') }}</textarea>
 
     @error('cover')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
-    <label for="cover">Insert title</label>
-    <input type="text" id="cover" name="cover" placeholder="cover">
+    <label for="cover">Insert cover path  (Es. http:\\coverpath.png)</label>
+    <input type="text" id="cover" name="cover" placeholder="cover" value="{{old('cover')}}">
 
     {{-- Submit --}}
     <input class="btn" type="submit" value="Insert">

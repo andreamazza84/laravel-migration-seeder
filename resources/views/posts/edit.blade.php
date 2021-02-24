@@ -14,7 +14,7 @@ Edit videogame
     <input type="text" id="title" placeholder="title" name="title" value="{{ $product->title }}">
     <label for="body">Change description</label>
     <textarea id="body" name="body" cols="30" rows="10">{{ $product->body }}</textarea>
-    <label for="cover">Change title</label>
+    <label for="cover">Change cover path (Es. http:\\coverpath.png)</label>
     <input type="text" id="cover" name="cover" placeholder="cover" value="{{ $product->cover }}">
     {{-- Submit --}}
     <input type="submit" value="Insert">

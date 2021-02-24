@@ -15,6 +15,7 @@ class MainController extends Controller
     public function index()
     {
         $products = Product::latest()->get();
+        //$products = Product::where('id', '>', '3')->get();
         //dd($products);
         return view('posts.index', compact('products'));
     }
@@ -46,12 +47,12 @@ class MainController extends Controller
         ]);
         Product::create($validatedData);
         $product = new Product;
-        $product->title = request('title');
-        $product->body = request('body');
-        $product->cover = request('cover');
-        $product->save();
+        // $product->title = request('title');
+        // $product->body = request('body');
+        // $product->cover = request('cover');
+        // $product->save();
 
-        $product = Product::orderBy('id')->first();
+        $product = Product::orderBy('id', 'desc')->first();
         return redirect()->route('posts.index');
     }
 
