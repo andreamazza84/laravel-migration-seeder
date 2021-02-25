@@ -20,8 +20,7 @@ class AppController extends Controller
      *  
      */  
     public function products(Product $products){
-        $products = Product::all();
-        //dd($products->title);
+        $products = Product::latest()->get();
         return view('videogames', compact('products'));
     }
 
@@ -32,5 +31,4 @@ class AppController extends Controller
     public function contacts(){
         return view('contacts');
     }
-    
 }

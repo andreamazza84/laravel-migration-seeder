@@ -38,20 +38,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
         //Validation
         $validatedData = $request->validate([
             'title' => 'required',
             'body' => 'required',
             'cover' => 'required'
         ]);
+
         Product::create($validatedData);
         $product = new Product;
-        // $product->title = request('title');
-        // $product->body = request('body');
-        // $product->cover = request('cover');
-        // $product->save();
-
         $product = Product::orderBy('id', 'desc')->first();
         return redirect()->route('products.index');
     }
@@ -64,10 +59,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //$prodotto = Product::find($product);
-
-        //$products = Product::all();
-        //dd($product);
         return view('products.show', compact('product'));
     }
 
@@ -91,11 +82,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //dd($request);
-        $data = $request->all();
-        $product->update($data);
+        $validated = $request->validate([
+        'title' => 'required',
+        'body' => 'required',
+        'cover' => 'required'
+        ]);
+        $product->update($validated);
 
-        return redirect()->route('products.show', $product);
+        return redirect()->route('products.index');
     }
 
     /**

@@ -112,8 +112,32 @@ a {
   padding: 100px;
 }
 
-#main img.cover {
+#main .card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  align-items: center;
+}
+
+#main .card .cover {
   max-width: 300px;
+}
+
+#main .card .cover,
+#main .card .title,
+#main .card .body {
+  margin-bottom: 30px;
+}
+
+#main .card .title {
+  font-size: 26px;
+}
+
+#main .card .body {
+  text-align: justify;
 }
 
 #footer {

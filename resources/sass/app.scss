@@ -88,10 +88,10 @@ a{
                         border-bottom: 2px solid $font-darkgrey;
                     }
                 }
-            }
-            li:last-child{
-                a{
-                    margin-right: 0;
+                &:last-child{
+                    a{
+                        margin-right: 0;
+                    }
                 }
             }
         }
@@ -100,17 +100,35 @@ a{
 #main{
     min-height: 100vh;
     padding: 100px;
-    img.cover{
-        max-width: 300px;
+    .card{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 30px;
+        margin-bottom: 10px;
+        border: 1px solid $border-lightgrey;
+        align-items: center;
+        .cover{
+            max-width: 300px;
+        }
+        .cover, .title, .body{
+            margin-bottom: 30px;
+        }
+        .title{
+            font-size: 26px;
+        }
+        .body{
+            text-align: justify;
+        }
     }
+    
 }
-
 #footer{
     height: 200px;
     background: $background-darkgrey;
 }
 
-//Admin
+//Administration
 
 .index{
    border: 1px solid $border-grey;
