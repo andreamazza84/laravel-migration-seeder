@@ -18,7 +18,7 @@ Insert a new videogame
     </div>
 @endif
 
-<form class="edit-create" action="{{ route('posts.store')}}", method="post">
+<form class="edit-create" action="{{ route('products.store')}}", method="post">
     @csrf
     @method('POST')
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
-class MainController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class MainController extends Controller
         $products = Product::latest()->get();
         //$products = Product::where('id', '>', '3')->get();
         //dd($products);
-        return view('posts.index', compact('products'));
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -27,7 +27,7 @@ class MainController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('products.create');
     }
 
     /**
@@ -53,7 +53,7 @@ class MainController extends Controller
         // $product->save();
 
         $product = Product::orderBy('id', 'desc')->first();
-        return redirect()->route('posts.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -67,8 +67,8 @@ class MainController extends Controller
         //$prodotto = Product::find($product);
 
         //$products = Product::all();
-        //dd($products);
-        return view('posts.show', compact('product'));
+        //dd($product);
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -79,7 +79,7 @@ class MainController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('posts.edit', compact('product'));
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -95,7 +95,7 @@ class MainController extends Controller
         $data = $request->all();
         $product->update($data);
 
-        return redirect()->route('posts.show', $product);
+        return redirect()->route('products.show', $product);
     }
 
     /**
@@ -107,6 +107,6 @@ class MainController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('posts.index');
+        return redirect()->route('products.index');
     }
 }

@@ -6,7 +6,7 @@ All videogames
 
 @section('content')
 <h1>All videogames</h1>
-<a class="btn" href="{{ route('posts.create') }}"> Create a new product</a>
+<a class="btn" href="{{ route('products.create') }}"> Create a new product</a>
 
 <table class="index">
     <thead>
@@ -22,15 +22,17 @@ All videogames
         @foreach ($products as $product)    
             <tr>
                 <td>{{ $product->id }}</td>
-                <td><img width="80px" src="{{ $product->cover }}" alt="missing cover"></td>
+                <td>
+                    <img width="80px" src="{{ $product->cover }}" alt="missing cover">
+                </td>
                 <td>{{ $product->title }}</td>
                 <td>{{ $product->body }}</td>
                 <td>{{ $product->created_at }}</td>
                 <td>{{ $product->updated_at }}</td>
                 <td>
-                    <a class="btn" href="{{route('posts.show', [$product->id])}}">View</a>
-                    <a class="btn" href="{{route('posts.edit', [$product->id])}}">Edit</a>
-                    <form action="{{ route('posts.destroy', $product->id) }}" method="post">
+                    <a class="btn" href="{{ route('products.show', ['product' => $product->id]) }}">View</a>
+                    <a class="btn" href="{{ route('products.edit', ['product' => $product->id]) }}">Edit</a>
+                    <form action="{{ route('products.destroy', ['product' => $product->id]) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <input class="btn" type="submit" value="Delete">

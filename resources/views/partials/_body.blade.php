@@ -7,7 +7,7 @@
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('videogames')}}">Videogames</a></li>
                 <li><a href="{{ route('contacts') }}">Contacts</a></li>
-                <li><a href="{{ route('posts.index') }}">Admin</a></li>  
+                <li><a href="{{ route('products.index') }}">Admin</a></li>  
             </ul>
         </div>
     </header>

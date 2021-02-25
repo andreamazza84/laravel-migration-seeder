@@ -1,6 +1,5 @@
 @import 'partials/_variables.scss';
 
-
 *{
     margin: 0;
     padding: 0;
@@ -59,7 +58,8 @@ a{
     width: 100%;
     height: 100px;
     position: fixed;
-    background: $background-header;
+    background: $gradient-header-a;
+    background: $gradient-header-b;
     .navbar{
         width: 100%;
         height: 100%;
@@ -87,7 +87,12 @@ a{
                     &:hover{
                         border-bottom: 2px solid $font-darkgrey;
                     }
-                }   
+                }
+            }
+            li:last-child{
+                a{
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -95,6 +100,9 @@ a{
 #main{
     min-height: 100vh;
     padding: 100px;
+    img.cover{
+        max-width: 300px;
+    }
 }
 
 #footer{

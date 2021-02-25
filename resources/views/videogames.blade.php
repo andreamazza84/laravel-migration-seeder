@@ -5,12 +5,11 @@ Videogames
 @endsection
 
 @section('content')
-<h1>Videogames</h1>
-@foreach ($products as $item)
-<img src="{{ $item->cover }}" alt="Cover">
-    <div>{{ $item->title }}</div>
-    <div>{{ $item->body }}</div>
+    <h1>Videogames</h1>
+        @foreach ($products as $item)
+        <img class="cover" src="{{ $item->cover }}" alt="missing cover">
+            <div>{{ $item->title }}</div>
+            <div>{{ $item->body }}</div>
 
-@endforeach
-
+        @endforeach
 @endsection

@@ -19,5 +19,5 @@ Route::get('/videogames', 'AppController@products')->name('videogames');
 Route::get('/contacts', 'AppController@contacts')->name('contacts');
 
 //Main Controller
-Route::resource('posts', 'MainController');
+Route::resource('products', 'ProductController');
 
