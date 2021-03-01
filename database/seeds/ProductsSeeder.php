@@ -3,6 +3,7 @@
 use App\Product;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Carbon\Carbon;
 
 class ProductsSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class ProductsSeeder extends Seeder
      *
      * @return void
      */
-   
+    
     public function run(Faker $faker)
     {
     $imgfaker = \Faker\Factory::create();
